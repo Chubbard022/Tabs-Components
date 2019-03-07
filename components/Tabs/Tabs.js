@@ -38,18 +38,20 @@ class TabItem {
   constructor(element) {
     // Assign this.element to the passed in element
     // this.element;
-    this.element = element
+    this.element = element;
   }
 
   select() {
     // Select all ".tabs-item" elements from the DOM
     // const items;
-    const items = document.querySelector('.tab-item')
+    const items = document.querySelectorAll(".tabs-item")
     // Remove the class "tabs-item-selected" from each element
-    items.classList.remove('tabs-link-selected')
+    Array.from(items).forEach((item)=>{
+      item.classList.remove("tabs-item-selected")
+    })
     // Add a class named "tabs-item-selected" to this element
     //this.element;
-    this.element.classList.add('tabs-link-selected')
+    this.element.classList.add("tabs-item-selected")
   }
 }
 
